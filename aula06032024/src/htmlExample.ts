@@ -14,10 +14,11 @@ class Student {
     }
 }
 
-function greeter(student: Student) {
+function htmlGreeter(student: Student) {
     return "Hello, " + student;
 }
 
 let user = new Student("Jane", "M.", "User");
 
-console.log(greeter(user));
+document.body.textContent = htmlGreeter(user);
+// console.log(greeter(user));

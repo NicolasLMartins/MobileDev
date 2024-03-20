@@ -10,8 +10,9 @@ class Student {
         return this.fullName;
     }
 }
-function greeter(student) {
+function htmlGreeter(student) {
     return "Hello, " + student;
 }
 let user = new Student("Jane", "M.", "User");
-console.log(greeter(user));
+document.body.textContent = htmlGreeter(user);
+// console.log(greeter(user));
