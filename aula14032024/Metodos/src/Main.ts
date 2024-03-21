@@ -1,21 +1,26 @@
 class Metodos {
-    private _nome: String;
+    private nome: string;
     
     constructor(
-        public nome: String
+        nome: string
     ) {
         /* CONSTRUTOR */ 
-        this._nome = nome; // _nome que é privado recebe o valor de nome que é público
+        this.nome = nome; // _nome que é privado recebe o valor de nome que é público
     }
 
-    cadastra(): String {
+    public cadastra(): string {
         return this.nome;
+    }
+
+    public toString(): string {
+        return `Aluno cadastrado: ${this.nome}`;
     }
 }
 
-// "João" é passado por parâmetro
+// "João" é passado por parâmetro para o método constructor()
+// da classe Metodos e instancia um novo objeto
 let m = new Metodos("João") /* OBJETO */;
 
 m.cadastra();
 
-console.log(`Aluno cadastrado: ${m.nome}`);
+console.log(m.toString());
