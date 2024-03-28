@@ -26,8 +26,6 @@ class Locadora {
     }
     ;
     valorTotal() {
-        if (this._valoresDiarios) {
-        }
         const chave = `${this._modeloCarro}_${this._anoCarro}`;
         const valorDiario = this._valoresDiarios[chave];
         return this._qtdDias * valorDiario;
