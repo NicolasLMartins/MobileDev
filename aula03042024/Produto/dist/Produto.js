@@ -12,14 +12,15 @@ class Produto {
         this._percentualAplicado = percentualAplicado;
     }
     definirInfoVenda() {
-        this._precoDeVenda = this._precoDeCompra * (1 + this._percentualAplicado / 100);
+        const precoDeVenda = this._precoDeCompra * (1 + this._percentualAplicado / 100);
+        let situacaoDoProduto;
         if (this._percentualAplicado >= 50) {
-            this._situacaoDoProduto = "Este produto está acima do valor médio de mercado.";
+            situacaoDoProduto = "Este produto está acima do valor médio de mercado.";
         }
         else {
-            this._situacaoDoProduto = "Este produto está abaixo do valor médio de mercado.";
+            situacaoDoProduto = "Este produto está abaixo do valor médio de mercado.";
         }
-        return [this._precoDeVenda, this._situacaoDoProduto];
+        return [precoDeVenda, situacaoDoProduto];
     }
     toString() {
         const [preco, situacao] = this.definirInfoVenda();
