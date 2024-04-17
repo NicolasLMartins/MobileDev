@@ -5,7 +5,7 @@ export class Compra {
     private _produtos: Produto[];
 
     constructor(
-        ...produtos: Produto[]
+        produtos: Produto[]
     ) {
         this._produtos = produtos;
     }
@@ -19,8 +19,9 @@ export class Compra {
     }
 
     public toString(): void {
-        let produtoString: string;
-        this._produtos.forEach((produto, i) => { produtoString[i] = `Nome: ${produto._nome}, Quantidade: ${produto._quantidade}`; console.log(produtoString[i]) });
-        console.log(`Preço de compra: R$ ${this.calculaPrecoCompra().toFixed(2)}`);
+        this._produtos.forEach(produto => {
+            console.log(`Nome: ${produto._nome}, Quantidade: ${produto._quantidade}`);
+        });
+        console.log(`\nPreço de compra: R$ ${this.calculaPrecoCompra().toFixed(2)}\n`);
     }
 }
